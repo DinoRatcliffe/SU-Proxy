@@ -27,7 +27,7 @@ $pageurl = str_replace("www.", "", $pageurl);
 $urlroot = "http://www.".explode("/", $pageurl)[0];
 $urlrootesc = str_replace(".", "\.", $urlroot);
 
-$html = str_replace ("href=\"(?!http)", "href=\"".$urlroot, $html);
+$html = preg_replace ("#href=\"(?!http)#", "href=\"".$urlroot."/", $html);
 $html = preg_replace ("#src=\"(?!http)#", "src=\"".$urlroot, $html);
 
 $html = str_replace ("href=\"http", "href=\"/?ua=".$userAgent."&url=http", $html);
