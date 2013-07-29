@@ -1,4 +1,5 @@
 <?php
+$defaultUserAgent = "Mozilla/5.0 (Linux; U; Android 4.0.3; ko-kr; LG-L160L Build/IML74K) AppleWebkit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30";
 $ch = curl_init();
 if (isset($_GET['url'])) {
 	$pageurl = $_GET['url'];
@@ -10,7 +11,7 @@ if (isset($_GET['url'])) {
 if (isset($_GET['ua']) && $_GET['ua'] !== "") {
 	$userAgent = $_GET['ua'];
 } else {
-	$userAgent = 'Mozilla/5.0 (iPhone; U; CPU iPhone OS 3_0 like Mac OS X; en-us) AppleWebKit/528.18 (KHTML, like Gecko) Version/4.0 Mobile/7A341 Safari/528.16';
+	$userAgent = $defaultUserAgent;
 }
 
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
