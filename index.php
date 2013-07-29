@@ -31,6 +31,7 @@ $urlrootesc = str_replace(".", "\.", $urlroot);
 $html = preg_replace ("#href=\"(?!http)#", "href=\"".$urlroot."/", $html);
 $html = preg_replace ("#src=\"(?!http)#", "src=\"".$urlroot, $html);
 
+//this will always run because I add http above :/
 $html = str_replace ("href=\"http", "href=\"/?ua=".$userAgent."&url=http", $html);
 
 if ($html == "") {
