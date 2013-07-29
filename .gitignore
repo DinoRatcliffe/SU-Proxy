@@ -1,0 +1,7 @@
+## Hidden Files ##
+##################
+.*
+
+## Force Git Ignore ##
+######################
+!.gitignore
